@@ -18,7 +18,7 @@ LOGIN_SENHA = os.getenv("password")
 
 # === CONFIGURAÇÕES DE EMAIL ===
 SERVICE_ACCOUNT_PATH = os.getenv("GSA_CREDENTIALS")
-GMAIL_SENDER = "informatica@drogcidade.com.br"
+GMAIL_SENDER = os.getenv("sender")
 
 # Mapeamento de filiais para emails
 
