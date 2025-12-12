@@ -1,6 +1,7 @@
 # email_sender.py
 import base64
 from email.message import EmailMessage
+from google.oauth2.service_account import Credentials
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from datetime import datetime, timedelta
