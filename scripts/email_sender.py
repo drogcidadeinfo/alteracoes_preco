@@ -21,10 +21,10 @@ def enviar_email_com_pdfs(relatorio_pdf, arquivos_etiquetas):
     print("\n📨 Preparando envio de emails...")
     
     # Configura credenciais
-    creds = service_account.Credentials.from_service_account_file(
-        SERVICE_ACCOUNT_PATH,
-        scopes=["https://www.googleapis.com/auth/gmail.send"]
-    )
+    creds_env = SERVICE_ACCOUNT_PATH
+    scope = ["https://www.googleapis.com/auth/gmail.send"]
+
+    creds = Credentials.from_service_account_info(json.loads(creds_env), scopes=scope)
     delegated_creds = creds.with_subject(GMAIL_SENDER)
     service = build("gmail", "v1", credentials=delegated_creds)
     
