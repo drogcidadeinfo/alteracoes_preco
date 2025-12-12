@@ -74,11 +74,14 @@ def enviar_email_com_pdfs(relatorio_pdf, arquivos_etiquetas):
                 msg["From"] = GMAIL_SENDER
                 msg["Subject"] = f"ALTERAÇÕES DE PREÇOS - {data}"
                 msg.set_content(f"""
-Bom dia,
+Esta é uma mensagem automática.
 
-Segue em anexo o relatório de alterações de preços e as etiquetas correspondentes para a filial {filial}.
+Foram detectadas alterações de preços na data atual e a filial {filial} possui produtos com saldo em estoque relacionados a essas alterações.
 
-Atenciosamente,
+Estão anexados:
+- Relatório técnico de alterações de preços
+- Arquivo de etiquetas correspondentes
+
 Sistema de Automação - Drogaria Cidade
 """)
                 
