@@ -82,13 +82,16 @@ def main():
             print("⚠️ Nenhuma etiqueta foi gerada. Encerrando...")
             return
         
+        # Convert etiquetas keys to strings to match email map
+        arquivos_etiquetas_str = {str(k): v for k, v in arquivos_etiquetas.items()}
+        
         # === ETAPA 5: ENVIAR EMAILS ===
         print("\n" + "=" * 60)
         print("ETAPA 5: ENVIANDO EMAILS")
         print("=" * 60)
         
-        enviar_email_com_pdfs(relatorio_pdf, arquivos_etiquetas)
-        
+        enviar_email_com_pdfs(relatorio_pdf, arquivos_etiquetas_str)
+                
         print("\n" + "=" * 60)
         print("✅ PROCESSO CONCLUÍDO COM SUCESSO!")
         print("=" * 60)
