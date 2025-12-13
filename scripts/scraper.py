@@ -89,7 +89,7 @@ class TrierScraper:
         print("🧾 Aba de filtros acessada.")
         
         # Define período (ontem)
-        data = (datetime.now() - timedelta(days=1)).strftime("%d/%m/%Y")
+        data = (datetime.now()).strftime("%d/%m/%Y")
         self.wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="dat_init"]'))).send_keys(data)
         self.wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="dat_fim"]'))).send_keys(data)
         print(f"📅 Período definido: {data} a {data}")
