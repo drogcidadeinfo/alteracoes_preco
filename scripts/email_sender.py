@@ -57,7 +57,7 @@ def enviar_email_com_pdfs(relatorio_pdf, arquivos_etiquetas):
         service = build("gmail", "v1", credentials=delegated_creds)
         print("✅ Gmail API service initialized successfully")
         
-        data = (datetime.now() - timedelta(days=1)).strftime("%d/%m/%Y")
+        data = (datetime.now()).strftime("%d/%m/%Y")
         
         for filial, email in EMAILS_FILIAIS.items():
             # Verifica se há etiquetas para esta filial
